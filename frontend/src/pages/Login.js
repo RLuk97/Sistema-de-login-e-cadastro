@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import './Auth.css';
+// Imagem agora está na pasta public
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -82,7 +83,12 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-container">
+    <div 
+      className="auth-container with-background" 
+      style={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      }}
+    >
       <div className="auth-card">
         <div className="auth-header">
           <h1>Entrar</h1>
