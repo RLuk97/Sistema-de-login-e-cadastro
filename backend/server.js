@@ -15,7 +15,24 @@ const allowedOrigins = [
 ].filter(Boolean);
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    // Permitir requisições sem origin (mobile apps, etc.)
+    if (!origin) return callback(null, true);
+    
+    // Verificar se a origin está na lista de permitidas
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    
+    // Permitir qualquer subdomínio do Vercel
+    if (origin.includes('vercel.app')) {
+      return callback(null, true);
+    }
+    
+    // Rejeitar outras origins
+    const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+    return callback(new Error(msg), false);
+  },
   credentials: true
 }));
 
