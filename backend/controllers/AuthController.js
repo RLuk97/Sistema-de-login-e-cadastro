@@ -1,8 +1,8 @@
 const AuthService = require('../services/AuthService');
 
 class AuthController {
-  constructor() {
-    this.authService = new AuthService();
+  constructor(database) {
+    this.authService = new AuthService(database);
   }
 
   // Registra um novo usuário

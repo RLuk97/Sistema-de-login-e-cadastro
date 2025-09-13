@@ -2,14 +2,19 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
-const User = require('./models/User');
+const Database = require('./models/Database');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middlewares
+const allowedOrigins = [
+  'http://localhost:3000',
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
 app.use(cors({
-  origin: 'http://localhost:3000', // Frontend URL
+  origin: allowedOrigins,
   credentials: true
 }));
 
@@ -51,12 +56,17 @@ app.use('*', (req, res) => {
   });
 });
 
+// Inicializar banco de dados
+const database = new Database();
+
+// Tornar a instância do database disponível globalmente
+app.locals.database = database;
+
 // Inicialização do servidor
 async function startServer() {
   try {
     // Inicializa o banco de dados
-    const userModel = new User();
-    await userModel.initDatabase();
+    await database.initDatabase();
     console.log('✅ Banco de dados inicializado com sucesso');
     
     // Inicia o servidor
