@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3001;
 // Middlewares
 const allowedOrigins = [
   'http://localhost:3000',
+  'https://sistema-de-login-e-cadastro-x6wgzzfj1-ryans-projects-10476dc9.vercel.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
