@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
 
   // Configuração do axios
-  axios.defaults.baseURL = 'http://localhost:3001/api';
+  axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
   
   // Interceptor para adicionar token nas requisições
   axios.interceptors.request.use(
