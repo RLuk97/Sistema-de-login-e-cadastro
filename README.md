@@ -5,7 +5,7 @@
 ## 🌐 URLs de Produção
 
 ### Frontend (Vercel)
-- **URL Principal**: https://sistema-de-login-e-cadastro-x6wgzzfj1-ryans-projects-10476dc9.vercel.app
+- **URL Principal**: https://sistema-de-login-e-cadastro-navy.vercel.app
 - **Todas as URLs do Vercel funcionais** - Sistema com CORS configurado para aceitar todos os subdomínios
 
 ### Backend (Railway)
