@@ -70,7 +70,7 @@ async function startServer() {
     console.log('✅ Banco de dados inicializado com sucesso');
     
     // Inicia o servidor
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`🚀 Servidor rodando na porta ${PORT}`);
       console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
       console.log(`🔐 API Auth: http://localhost:${PORT}/api/auth`);
