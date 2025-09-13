@@ -48,7 +48,8 @@ TelaLoginCadastroFrontBackServerLocal/
 - CSS Modules
 
 ### Banco de Dados
-- SQLite
+- **Desenvolvimento**: SQLite (local)
+- **Produção**: PostgreSQL (Railway)
 
 ### Deploy
 - **Frontend**: Vercel (Deploy automático)
