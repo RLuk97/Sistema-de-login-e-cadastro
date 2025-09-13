@@ -5,7 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: url('../assets/space-background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -86,11 +90,21 @@
 }
 
 .user-info {
-  background: #f7fafc;
-  border-radius: 12px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
   padding: 24px;
-  border-left: 4px solid #667eea;
+  position: relative;
+  transition: all 0.3s ease;
 }
+
+.user-info:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+
 
 .user-info h3 {
   color: #2d3748;

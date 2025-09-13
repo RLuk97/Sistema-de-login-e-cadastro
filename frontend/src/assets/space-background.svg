@@ -1,0 +1,140 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="spaceGradient" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1a1a2e" />
+      <stop offset="30%" stop-color="#16213e" />
+      <stop offset="60%" stop-color="#0f3460" />
+      <stop offset="100%" stop-color="#0a1929" />
+    </radialGradient>
+    <radialGradient id="nebulaGradient" cx="30%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#ff6b9d" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#c44569" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#6c5ce7" stop-opacity="0.1" />
+    </radialGradient>
+    <radialGradient id="nebulaGradient2" cx="70%" cy="20%" r="35%">
+      <stop offset="0%" stop-color="#74b9ff" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#0984e3" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#2d3436" stop-opacity="0.05" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#spaceGradient)" />
+  
+  <!-- Nebulas -->
+  <ellipse cx="576" cy="432" rx="400" ry="300" fill="url(#nebulaGradient)" />
+  <ellipse cx="1344" cy="216" rx="350" ry="250" fill="url(#nebulaGradient2)" />
+  
+  <!-- Stars -->
+  <g fill="white" opacity="0.8">
+    <!-- Large stars -->
+    <circle cx="200" cy="150" r="2" filter="url(#glow)" />
+    <circle cx="1500" cy="200" r="2" filter="url(#glow)" />
+    <circle cx="300" cy="800" r="1.5" filter="url(#glow)" />
+    <circle cx="1600" cy="900" r="1.5" filter="url(#glow)" />
+    <circle cx="100" cy="500" r="1.5" filter="url(#glow)" />
+    <circle cx="1800" cy="400" r="1.5" filter="url(#glow)" />
+    
+    <!-- Medium stars -->
+    <circle cx="400" cy="100" r="1" />
+    <circle cx="800" cy="80" r="1" />
+    <circle cx="1200" cy="120" r="1" />
+    <circle cx="1700" cy="150" r="1" />
+    <circle cx="150" cy="300" r="1" />
+    <circle cx="500" cy="250" r="1" />
+    <circle cx="900" cy="200" r="1" />
+    <circle cx="1300" cy="300" r="1" />
+    <circle cx="1750" cy="350" r="1" />
+    <circle cx="50" cy="600" r="1" />
+    <circle cx="350" cy="650" r="1" />
+    <circle cx="750" cy="700" r="1" />
+    <circle cx="1150" cy="750" r="1" />
+    <circle cx="1550" cy="800" r="1" />
+    <circle cx="250" cy="950" r="1" />
+    <circle cx="650" cy="980" r="1" />
+    <circle cx="1050" cy="1000" r="1" />
+    <circle cx="1450" cy="950" r="1" />
+    <circle cx="1850" cy="900" r="1" />
+    
+    <!-- Small stars -->
+    <circle cx="120" cy="80" r="0.5" />
+    <circle cx="320" cy="60" r="0.5" />
+    <circle cx="520" cy="90" r="0.5" />
+    <circle cx="720" cy="110" r="0.5" />
+    <circle cx="920" cy="70" r="0.5" />
+    <circle cx="1120" cy="95" r="0.5" />
+    <circle cx="1320" cy="85" r="0.5" />
+    <circle cx="1520" cy="75" r="0.5" />
+    <circle cx="1720" cy="105" r="0.5" />
+    <circle cx="80" cy="180" r="0.5" />
+    <circle cx="280" cy="170" r="0.5" />
+    <circle cx="480" cy="190" r="0.5" />
+    <circle cx="680" cy="160" r="0.5" />
+    <circle cx="880" cy="180" r="0.5" />
+    <circle cx="1080" cy="170" r="0.5" />
+    <circle cx="1280" cy="190" r="0.5" />
+    <circle cx="1480" cy="160" r="0.5" />
+    <circle cx="1680" cy="180" r="0.5" />
+    <circle cx="1880" cy="170" r="0.5" />
+    <circle cx="40" cy="280" r="0.5" />
+    <circle cx="240" cy="270" r="0.5" />
+    <circle cx="440" cy="290" r="0.5" />
+    <circle cx="640" cy="260" r="0.5" />
+    <circle cx="840" cy="280" r="0.5" />
+    <circle cx="1040" cy="270" r="0.5" />
+    <circle cx="1240" cy="290" r="0.5" />
+    <circle cx="1440" cy="260" r="0.5" />
+    <circle cx="1640" cy="280" r="0.5" />
+    <circle cx="1840" cy="270" r="0.5" />
+  </g>
+  
+  <!-- Central astronaut figure -->
+  <g transform="translate(960, 540)">
+    <!-- Astronaut body -->
+    <ellipse cx="0" cy="0" rx="25" ry="35" fill="#e8e8e8" stroke="#c0c0c0" stroke-width="2" />
+    
+    <!-- Helmet -->
+    <circle cx="0" cy="-25" r="20" fill="rgba(255,255,255,0.1)" stroke="#ffffff" stroke-width="2" />
+    
+    <!-- Helmet reflection -->
+    <ellipse cx="-5" cy="-30" rx="8" ry="12" fill="rgba(255,255,255,0.3)" />
+    
+    <!-- Arms -->
+    <ellipse cx="-20" cy="-5" rx="8" ry="20" fill="#e8e8e8" stroke="#c0c0c0" stroke-width="1" />
+    <ellipse cx="20" cy="-5" rx="8" ry="20" fill="#e8e8e8" stroke="#c0c0c0" stroke-width="1" />
+    
+    <!-- Legs -->
+    <ellipse cx="-10" cy="25" rx="6" ry="18" fill="#e8e8e8" stroke="#c0c0c0" stroke-width="1" />
+    <ellipse cx="10" cy="25" rx="6" ry="18" fill="#e8e8e8" stroke="#c0c0c0" stroke-width="1" />
+    
+    <!-- Glowing ring around astronaut -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#ff6b9d" stroke-width="3" opacity="0.6" filter="url(#glow)" />
+    
+    <!-- Particles around the ring -->
+    <g fill="#ff6b9d" opacity="0.8">
+      <circle cx="50" cy="-30" r="1.5" filter="url(#glow)" />
+      <circle cx="-45" cy="35" r="1" filter="url(#glow)" />
+      <circle cx="30" cy="50" r="1.2" filter="url(#glow)" />
+      <circle cx="-55" cy="-10" r="1" filter="url(#glow)" />
+      <circle cx="40" cy="-45" r="0.8" filter="url(#glow)" />
+      <circle cx="-35" cy="-50" r="1.1" filter="url(#glow)" />
+    </g>
+  </g>
+  
+  <!-- Additional cosmic dust -->
+  <g fill="white" opacity="0.3">
+    <circle cx="100" cy="400" r="0.3" />
+    <circle cx="200" cy="450" r="0.3" />
+    <circle cx="300" cy="500" r="0.3" />
+    <circle cx="1600" cy="600" r="0.3" />
+    <circle cx="1700" cy="650" r="0.3" />
+    <circle cx="1800" cy="700" r="0.3" />
+  </g>
+</svg>
