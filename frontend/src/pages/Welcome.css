@@ -1,7 +1,7 @@
 /* Welcome Page Styles */
 .welcome-container {
   min-height: 100vh;
-  background-image: url('../assets/background.png');
+  background-image: url('../assets/space-background.svg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

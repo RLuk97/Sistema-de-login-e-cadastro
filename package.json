@@ -18,9 +18,5 @@
     "careers"
   ],
   "author": "Developer",
-  "license": "MIT",
-  "dependencies": {
-    "docx": "^9.5.1",
-    "marked": "^16.3.0"
-  }
+  "license": "MIT"
 }
