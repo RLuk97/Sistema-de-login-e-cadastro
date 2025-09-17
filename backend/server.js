@@ -29,6 +29,11 @@ app.use(cors({
       return callback(null, true);
     }
     
+    // Permitir localhost em qualquer porta para desenvolvimento
+    if (origin.startsWith('http://localhost:')) {
+      return callback(null, true);
+    }
+    
     // Rejeitar outras origins
     const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
     return callback(new Error(msg), false);
@@ -44,6 +49,9 @@ app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
   next();
 });
+
+// Inicializar banco de dados
+const database = new Database();
 
 // Rotas
 app.use('/api/auth', authRoutes);
@@ -73,9 +81,6 @@ app.use('*', (req, res) => {
     message: 'Rota não encontrada'
   });
 });
-
-// Inicializar banco de dados
-const database = new Database();
 
 // Tornar a instância do database disponível globalmente
 app.locals.database = database;

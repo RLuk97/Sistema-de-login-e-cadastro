@@ -65,6 +65,9 @@ class Database {
       )
     `;
 
+    // Criar tabela de fotos
+    await this.createPhotoTables();
+
     return new Promise((resolve, reject) => {
       this.connection.run(createTableQuery, (err) => {
         if (err) {
@@ -139,6 +142,78 @@ class Database {
 
   async verifyPassword(plainPassword, hashedPassword) {
     return await bcrypt.compare(plainPassword, hashedPassword);
+  }
+
+  async createPhotoTables() {
+    if (this.dbType === 'postgresql') {
+      await this.createPhotoTablesPostgreSQL();
+    } else {
+      await this.createPhotoTablesSQLite();
+    }
+  }
+
+  async createPhotoTablesPostgreSQL() {
+    const query = `
+      CREATE TABLE IF NOT EXISTS photos (
+        id SERIAL PRIMARY KEY,
+        user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+        filename VARCHAR(255) NOT NULL,
+        original_name VARCHAR(255) NOT NULL,
+        file_path VARCHAR(500) NOT NULL,
+        file_size INTEGER NOT NULL,
+        mime_type VARCHAR(100) NOT NULL,
+        title VARCHAR(255),
+        description TEXT,
+        album VARCHAR(100) DEFAULT 'Aleatórias',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `;
+    
+    await this.connection.query(query);
+    console.log('✅ Tabela photos criada/verificada no PostgreSQL');
+  }
+
+  async createPhotoTablesSQLite() {
+    const query = `
+      CREATE TABLE IF NOT EXISTS photos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        filename VARCHAR(255) NOT NULL,
+        original_name VARCHAR(255) NOT NULL,
+        file_path VARCHAR(500) NOT NULL,
+        thumbnail_path VARCHAR(500),
+        file_size INTEGER NOT NULL,
+        mime_type VARCHAR(100) NOT NULL,
+        title VARCHAR(255),
+        description TEXT,
+        album VARCHAR(100) DEFAULT 'Aleatórias',
+        is_album_placeholder INTEGER DEFAULT 0,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+      )
+    `;
+    
+    await new Promise((resolve, reject) => {
+      this.connection.run(query, (err) => {
+        if (err) {
+          console.error('Erro ao criar tabela photos:', err);
+          reject(err);
+        } else {
+          console.log('✅ Tabela photos criada/verificada no SQLite');
+          // Adicionar coluna is_album_placeholder se não existir
+          this.connection.run('ALTER TABLE photos ADD COLUMN is_album_placeholder INTEGER DEFAULT 0', (alterErr) => {
+            // Ignorar erro se a coluna já existir
+            // Adicionar coluna thumbnail_path se não existir
+            this.connection.run('ALTER TABLE photos ADD COLUMN thumbnail_path VARCHAR(500)', (thumbErr) => {
+              // Ignorar erro se a coluna já existir
+              resolve();
+            });
+          });
+        }
+      });
+    });
   }
 }
 

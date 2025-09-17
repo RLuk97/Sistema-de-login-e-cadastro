@@ -1,6 +1,6 @@
-# Backend - Sistema de Login e Cadastro
+# Backend - PhotoVault
 
-Backend da aplicação de login e cadastro com suporte a SQLite (desenvolvimento) e PostgreSQL (produção).
+Backend do PhotoVault - Sistema de armazenamento e organização de fotos com suporte a SQLite (desenvolvimento) e PostgreSQL (produção).
 
 ## 🚀 Deploy no Railway
 
