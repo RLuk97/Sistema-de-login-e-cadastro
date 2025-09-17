@@ -1,7 +1,7 @@
 {
-  "name": "sistema-login-cadastro",
+  "name": "br-vagas",
   "version": "1.0.0",
-  "description": "Sistema completo de login e cadastro",
+  "description": "Br Vagas - Plataforma brasileira de vagas e oportunidades profissionais",
   "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js",
@@ -9,10 +9,13 @@
     "postinstall": "npm run install-backend"
   },
   "keywords": [
-    "login",
-    "authentication",
+    "vagas",
+    "jobs",
+    "brasil",
+    "react",
     "express",
-    "react"
+    "authentication",
+    "careers"
   ],
   "author": "Developer",
   "license": "MIT",

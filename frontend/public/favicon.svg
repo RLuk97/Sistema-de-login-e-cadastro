@@ -1,13 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <!-- Background circle -->
-  <circle cx="50" cy="50" r="45" fill="#667eea" stroke="#4c51bf" stroke-width="2"/>
+  <!-- Background circle with Brazilian colors -->
+  <circle cx="50" cy="50" r="45" fill="#009639" stroke="#FFDF00" stroke-width="3"/>
   
-  <!-- User icon -->
-  <circle cx="50" cy="35" r="12" fill="white"/>
-  <path d="M30 70 Q30 55 50 55 Q70 55 70 70 L30 70" fill="white"/>
+  <!-- Briefcase icon for job/career theme -->
+  <rect x="30" y="40" width="40" height="30" rx="3" fill="white" stroke="#009639" stroke-width="2"/>
+  <rect x="42" y="35" width="16" height="8" rx="2" fill="white" stroke="#009639" stroke-width="2"/>
   
-  <!-- Lock icon overlay -->
-  <rect x="60" y="60" width="16" height="12" rx="2" fill="#4c51bf" stroke="white" stroke-width="1"/>
-  <path d="M64 60 V56 Q64 52 68 52 Q72 52 72 56 V60" fill="none" stroke="white" stroke-width="2"/>
-  <circle cx="68" cy="66" r="2" fill="white"/>
+  <!-- Handle -->
+  <rect x="47" y="32" width="6" height="3" rx="1" fill="#009639"/>
+  
+  <!-- Lock/clasp -->
+  <circle cx="50" cy="55" r="3" fill="#FFDF00"/>
+  <rect x="48" y="52" width="4" height="2" fill="#009639"/>
+  
+  <!-- "BR" text -->
+  <text x="50" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">BR</text>
 </svg>

@@ -1,4 +1,4 @@
-# Sistema de Login e Cadastro Completo
+# Br Vagas - Plataforma de Vagas Brasileira
 
 🚀 **Sistema em Produção - Funcionando 24 Horas!**
 
@@ -25,7 +25,7 @@
 ## 🏗️ Estrutura do Projeto
 
 ```
-TelaLoginCadastroFrontBackServerLocal/
+br-vagas/
 ├── backend/          # API Node.js + Express (Railway)
 ├── frontend/         # React App (Vercel)
 ├── database/         # SQLite Database

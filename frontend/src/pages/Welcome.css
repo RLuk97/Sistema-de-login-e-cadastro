@@ -60,7 +60,7 @@
 .user-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #009639 0%, #00b347 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -100,7 +100,7 @@
 
 .welcome-header h1 {
   font-size: 28px;
-  background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea);
+  background: linear-gradient(45deg, #009639, #00b347, #FFDF00, #009639);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

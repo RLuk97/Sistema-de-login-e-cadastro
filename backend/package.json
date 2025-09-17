@@ -1,7 +1,7 @@
 {
-  "name": "photovault-backend",
+  "name": "br-vagas-backend",
   "version": "1.0.0",
-  "description": "Backend para PhotoVault - Sistema de armazenamento e organização de fotos",
+  "description": "Backend para Br Vagas - Plataforma brasileira de vagas e oportunidades profissionais",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

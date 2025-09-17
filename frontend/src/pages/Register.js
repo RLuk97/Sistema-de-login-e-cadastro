@@ -102,6 +102,14 @@ const Register = () => {
 
   return (
     <div className="auth-container with-background">
+      {/* Banner de "Em Breve" */}
+      <div className="coming-soon-banner">
+        <div className="banner-content">
+          <h2>Br Vagas</h2>
+          <p>Em breve a plataforma de vagas brasileira estará no ar!</p>
+        </div>
+      </div>
+      
       <div className="auth-card">
         <div className="auth-header">
           <h1>Cadastrar</h1>
